@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block main %}
+<h3>記事一覧</h3>
+<br>
+<ol>
+    {% for post in object_list %}
+    <li><a href="{% url 'detail' post.id %}">{{ post.title }}
+	    </a>
+        <time>{{ post.updated}}</time>
+	</li>
+    {% endfor %}
+</ol>
+<p><a href="{% url 'create' %}">新規投稿</a></p>
+{% endblock %}
